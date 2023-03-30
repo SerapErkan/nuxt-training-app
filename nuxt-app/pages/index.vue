@@ -1,10 +1,8 @@
-<template lang="pug">
-  tutorial
+<template>
 </template>
 
 <script>
-import Vue from 'vue'
+export default{
 
-export default Vue.extend({
-  name: 'IndexPage'
-})
+}
+</script>
