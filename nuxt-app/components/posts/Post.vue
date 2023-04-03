@@ -11,14 +11,15 @@
         preserveAspectRatio="xMidYMid slice"
         focusable="false"
       >
-        <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#55595c"></rect>
-        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+        <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+          {{ post.subTitle }}
+        </text>
       </svg>
       <div class="card-body">
+        <h4>{{ post.title }}</h4>
         <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
+          {{ post.text }}
         </p>
         <div class="d-flex justify-content-center align-items-center">
           <div v-if="isAdmin">
@@ -55,18 +56,22 @@
 export default {
   methods: {
     goToDetail() {
-      this.$router.push("posts/1");
+      this.$router.push("posts/" + post.id);
     },
     goToDelete() {
       alert("SİLMEK İSTEDİĞİNDEN EMİN MİSİN");
     },
     goToEdit() {
-      this.$router.push("user/new-post");
+      this.$router.push("user/" + post.id);
     },
   },
   props: {
     isAdmin: {
       type: Boolean,
+      required: true,
+    },
+    post: {
+      type: Object,
       required: true,
     },
   },

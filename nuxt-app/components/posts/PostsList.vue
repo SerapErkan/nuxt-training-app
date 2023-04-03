@@ -2,7 +2,12 @@
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <Post v-for="index in 9" :is-admin="isAdmin" />
+        <Post
+          v-for="post in posts"
+          :is-admin="isAdmin"
+          :key="post.id"
+          :post="post"
+        />
       </div>
     </div>
   </div>
@@ -16,7 +21,11 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false,
-      // required: false,
+      required: false,
+    },
+    posts: {
+      required: true,
+      type: Array,
     },
   },
 };
