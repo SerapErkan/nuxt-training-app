@@ -56,13 +56,13 @@
 export default {
   methods: {
     goToDetail() {
-      this.$router.push("posts/" + post.id);
+      this.$router.push("posts/" + 1);
     },
     goToDelete() {
       alert("SİLMEK İSTEDİĞİNDEN EMİN MİSİN");
     },
     goToEdit() {
-      this.$router.push("user/" + post.id);
+      this.$router.push("user/" + 1);
     },
   },
   props: {
