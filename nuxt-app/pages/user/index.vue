@@ -12,7 +12,7 @@ import PostsList from '../../components/posts/PostsList.vue';
       </nuxt-link>
     </div>
 
-    <PostsList :is-admin="true" />
+    <PostsList :posts="fetchedPosts" :is-admin="true" />
   </div>
 </template>
 <script>
@@ -21,6 +21,11 @@ export default {
   layout: "userLayout",
   components: {
     PostsList,
+  },
+  computed: {
+    fetchedPosts() {
+      return this.$store.getters.getPost;
+    },
   },
 };
 </script>

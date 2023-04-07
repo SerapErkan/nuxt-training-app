@@ -13,6 +13,13 @@ return new Vuex.Store({
         }
     },
     actions:{
+    nuxtServerInit(vuexContext,contex){
+if(process.client){
+    console.log("server üzerinde çalışma yapalım")
+}
+    
+},
+
      setPosts(vuexContext,posts){
      vuexContext.commit("setPost",posts)
         }
