@@ -1,5 +1,5 @@
 <template>
-  <newPostForm />
+  <newPostForm @submit="savePost($event)" />
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
   layout: "userLayout",
   components: {
     newPostForm,
+  },
+  methods: {
+    savePost(post) {
+      console.log(post);
+    },
   },
 };
 </script>
