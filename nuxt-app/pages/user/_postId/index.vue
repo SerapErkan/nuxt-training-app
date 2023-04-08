@@ -4,7 +4,7 @@
       <h5 class="fw-bold">Warning ..!</h5>
       The old post will be deleted when the post update process is performed.
     </div>
-    <newPostForm />
+    <newPostForm :post="LoadedPost" />
   </div>
 </template>
 <script>
@@ -13,6 +13,17 @@ export default {
   layout: "userLayout",
   components: {
     newPostForm,
+  },
+  data() {
+    return {
+      LoadedPost: {
+        id: 1,
+        title: "kötü kara kedi köfte ",
+        subTitle: "Patile",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        author: "SerapErkan",
+      },
+    };
   },
 };
 </script>

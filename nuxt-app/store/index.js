@@ -14,9 +14,30 @@ return new Vuex.Store({
     },
     actions:{
     nuxtServerInit(vuexContext,contex){
-if(process.client){
-    console.log("server üzerinde çalışma yapalım")
-}
+     vuexContext.commit("setPost", [
+    {
+      id: 1,
+      title: "kötü kara kedi köfte ",
+      subTitle: "Patile",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      author: "SerapErkan",
+    },
+    {
+      id: 2,
+      title: "küçük kar kedi köfte ",
+      subTitle: "Patile",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      author: "SerapErkan",
+    },
+    {
+      id: 3,
+      title: "kötü kedi köfte ",
+      subTitle: "Patile",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      author: "SerapErkan",
+    },
+  ],
+  )
     
 },
 

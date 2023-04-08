@@ -74,5 +74,22 @@ export default {
       this.$emit("submit", this.post);
     },
   },
+  props: {
+    post: {
+      type: Object,
+      required: false,
+    },
+  },
+  created() {
+    this.post = this.post
+      ? this.post
+      : {
+          id: null,
+          title: null,
+          subTitle: null,
+          text: null,
+          author: null,
+        };
+  },
 };
 </script>

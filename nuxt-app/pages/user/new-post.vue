@@ -4,7 +4,7 @@
 
 <script>
 import newPostForm from "../../components/users/new-postForm.vue";
-
+import axios from "axios";
 export default {
   layout: "userLayout",
   components: {
@@ -12,7 +12,14 @@ export default {
   },
   methods: {
     savePost(post) {
-      console.log(post);
+      // axios
+      //   .post(
+      //     "https://nuxt-app-001-default-rtdb.firebaseio.com/posts.json",
+      //     post
+      //   )
+      //   .then((res) => {
+      //     console.log(res);
+      //   });
     },
   },
 };
